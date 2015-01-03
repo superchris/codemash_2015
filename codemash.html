@@ -1,0 +1,210 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+
+	<title>Meteor and Angular</title>
+
+	<meta name="description" content="A framework for easily creating beautiful presentations using HTML">
+	<meta name="author" content="Hakim El Hattab">
+
+	<meta name="apple-mobile-web-app-capable" content="yes" />
+	<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+	<link rel="stylesheet" href="css/reveal.min.css">
+	<link rel="stylesheet" href="css/overrides.css">
+	<link rel="stylesheet" href="css/theme/default.css" id="theme">
+
+	<!-- For syntax highlighting -->
+	<link rel="stylesheet" href="lib/css/zenburn.css">
+
+	<!-- If the query includes 'print-pdf', include the PDF print sheet -->
+	<script>
+	if( window.location.search.match( /print-pdf/gi ) ) {
+		var link = document.createElement( 'link' );
+		link.rel = 'stylesheet';
+		link.type = 'text/css';
+		link.href = 'css/print/pdf.css';
+		document.getElementsByTagName( 'head' )[0].appendChild( link );
+	}
+	</script>
+
+	<!--[if lt IE 9]>
+	<script src="lib/js/html5shiv.js"></script>
+	<![endif]-->
+</head>
+
+<body>
+
+	<div class="reveal">
+
+		<!-- Any section element inside of this container is displayed as a slide -->
+		<div class="slides">
+			<section data-markdown class="big-image">
+				## Hi!
+				### Chris Nelson
+				### @superchris
+				![Gaslight Logo](white_logo.png)
+			</section>
+			<section data-markdown>
+				## My goal
+				* Rethink what web app dev could be like
+				* Question “best practices” in web app architecture
+			</section>
+			<section data-markdown>
+				## The state of SPA
+			</section>
+			<section data-markdown>
+				### Things are much better on the client side
+				* Powerful frameworks help a lot
+				* Packaging is better
+				* Managing dependencies is meh
+			</section>
+			<section data-markdown>
+				## How to SPA server
+				* REST
+				* Keep em separated
+			</section>
+			<section data-markdown>
+				## How's that working out for ya?
+				* Building separate client and server apps is hard
+				* This seems to be true no matter which end you start with
+				* Feels like building the same app twice
+			</section>
+			<section data-markdown>
+				## Meteor
+				* A holistic approach to modern web app development
+				* Javascript* on client and server
+				* Real time persistence is free
+				* Live reload just happens
+				* OAuth is dead simple
+				* Mobile via Cordova
+			</section>
+			<section data-markdown>
+				## Under the covers
+				### Node.js
+				### Mongo
+			</section>
+			<section data-markdown>
+				## Demo time
+			</section>
+			<section data-markdown>
+				## Reactivity
+				* Full stack
+				* One-way binding
+			</section>
+			<section data-markdown>
+				## DDP
+				* Simple JSON protocol
+				* Pub/sub on collections
+				* Simple RPCish method invocation
+				* Not REST
+			</section>
+			<section data-markdown>
+				## Collections
+			</section>
+			<section data-markdown>
+				## Packaging
+			</section>
+			<section data-markdown>
+				## Why might I want Angular too?
+				### I already know it
+				### Awesome components
+				### Bindings
+				### Choice
+			</section>
+			<section data-markdown>
+				## WANTZ!
+				### All the awesome bits
+				### Angular at the front end
+			</section>
+			<section data-markdown>
+				## Gotchas
+				* 2 different "binding" mechanisms
+				* 2 different templating things
+				* Meteor packaging
+				* We need to bootstrap
+			</section>
+			<section data-markdown>
+				## Introducing superchris:angular-meteor
+				### The meatier meteor
+			</section>
+			<section data-markdown>
+				## Solves:
+				* Bootstrapping angular app
+				* Template syntax collision*
+				* Loading template files
+				* Meteor and Angular Bindings, so happy together
+			</section>
+			<section data-markdown>
+				## Extras
+				### Relationships
+				### Pagination
+			</section>
+			<section data-markdown>
+				## Leaderboard with Angular
+			</section>
+			<section data-markdown>
+				## Cookbook demo
+			</section>
+			<section data-markdown>
+				## Adding OAuth
+				* `meteor add accounts-ui accounts-github`
+				* `{{> loginButtons}}`
+				* `$user`
+				* Do what meteor tells you
+			</section>
+			<section data-markdown>
+				## It's election time!
+			</section>
+			<section data-markdown>
+				![Scumbag Superchris](scumbag_superchris.jpg)
+			</section>
+			<section data-markdown>
+				## Deployment
+			</section>
+			<section data-markdown>
+				## Other approaches
+			</section>
+		</div>
+
+	</div>
+
+	<script src="lib/js/head.min.js"></script>
+	<script src="js/reveal.min.js"></script>
+
+	<script>
+
+		// Full list of configuration options available here:
+		// https://github.com/hakimel/reveal.js#configuration
+		Reveal.initialize({
+			controls: true,
+			progress: true,
+			history: true,
+			center: true,
+
+			theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+			transition: Reveal.getQueryHash().transition || 'default', // default/cube/page/concave/zoom/linear/fade/none
+
+			// Parallax scrolling
+			// parallaxBackgroundImage: 'https://s3.amazonaws.com/hakim-static/reveal-js/reveal-parallax-1.jpg',
+			// parallaxBackgroundSize: '2100px 900px',
+
+			// Optional libraries used to extend on reveal.js
+			dependencies: [
+			{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+			{ src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+			{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+			{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+			{ src: 'plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+			{ src: 'plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
+			]
+		});
+
+	</script>
+
+</body>
+</html>
